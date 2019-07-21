@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--导入thymeleaf名称空间提示-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>成都新华亿母婴</title>
+
+<!--图标样式-->
+<link rel="shortcut icon" type="image/x-icon" href="../选择页面/assets/images/favicon.ico">
+
+<link rel="stylesheet" th:href="@{../css/style.css}">
+
+
+</head>
+
+<body>
+
+  <h2>成都新华亿母婴</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="form_res" action="/userRegister/submit" method="post">
+		  <h1>注册</h1>
+		  <p>&nbsp;</p>
+            <input id="name" type="text"  onchange="ValueChange(this,0)"  name="name" placeholder="名称" />
+			<input id="username" type="text"  onchange="ValueChange(this,1)" name="username" placeholder="电话" />
+			<input id="password" type="password" name="password" placeholder="密码" />
+
+
+			<select class="form-control" id = "res_select" name = "res_select">
+					<option  selected = "selected" value ="客户">宝宝家长</option>
+					<option value ="育婴师">育婴师</option>
+					<!--<option id = "new_manager" value="管理员">管理员</option>-->
+			</select>
+			<button onclick="register()">注册</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="form_login" action="/userLogin/submit" method="post" >
+		  <h1>登录</h1>
+			<p id = "nouser" style="color: red"  th:text = "${not #strings.isEmpty(msg)} == true? ${msg}:''">&nbsp;</p>
+            <!--判断条件-->
+            <!--<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>-->
+		  <input id="username" type="text" name="username" placeholder="电话" />
+			<input id="password" type="password" name="password" placeholder="密码" />
+			<select class="form-control" id = "login_select" name = "login_select">
+				<option selected = "selected" value ="客户">宝宝家长</option>
+				<option  value ="育婴师">育婴师</option>
+				<option  value="管理员">管理员</option>
+			</select>
+			<a href="#">忘记密码？</a>
+			<button onclick="login()">登录</button>
+			
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>欢迎回来！</h1>
+				<p>请您先登录的个人信息，进行操作。</p>
+				<button class="ghost" id="signIn" onclick=changetoannotion()>登录</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>你好朋友！</h1>
+				<p>输入您的个人信息注册成为会员。</p>
+				<button class="ghost" id="signUp" onclick=changetosign()>注册</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer> </footer>
+  
+  
+
+<script  type="text/javascript" th:src="@{../js/index.js}"> </script>
+<script  type="text/javascript" th:src="@{../js/jquery.min.js}"> </script>
+
+
+
+</body>
+
+</html>

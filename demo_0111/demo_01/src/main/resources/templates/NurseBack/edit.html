@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="Grayrids">
+<title>成都新华亿母婴</title>
+
+<!--图标样式-->
+<link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" th:href="@{../assets/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../assets/css/line-icons.css" th:href="@{../assets/css/line-icons.css}">
+<link rel="stylesheet" href="../assets/css/owl.carousel.min.css" th:href="@{../assets/css/owl.carousel.min.css}">
+<link rel="stylesheet" href="../assets/css/owl.theme.default.css" th:href="@{../assets/css/owl.theme.default.css}">
+<link rel="stylesheet" href="../assets/css/slicknav.min.css" th:href="@{../assets/css/slicknav.min.css}">
+<link rel="stylesheet" href="../assets/css/animate.css" th:href="@{../assets/css/animate.css}">
+<link rel="stylesheet" href="../assets/css/main.css" th:href="@{../assets/css/main.css}">
+<link rel="stylesheet" href="../assets/css/responsive.css" th:href="@{../assets/css/responsive.css}">
+</head>
+<body>
+
+<header id="home" class="hero-area">
+
+<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+<div class="container">
+<div class="theme-header clearfix">
+
+<div class="navbar-header">
+<a href="index.html" class="navbar-brand"><img src="../assets/img/logo.png" alt=""></a>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar">
+  <ul class="navbar-nav mr-auto w-100 justify-content-end"></ul>
+<div class="mobile-menu" data-logo="../assets/img/logo-mobile.png"></div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+
+
+<div class="page-header">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="inner-header">
+  <h3>修改个人信息</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<section id="content">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-9 col-md-12 col-xs-12">
+<div class="add-resume box">
+<form th:action="@{/nurseedit}" method="post" >
+  <input type="hidden" name="_method" value="put">
+    <h3>基础信息</h3>
+    <div class="form-group">
+      <label >账户名</label>
+      <input name="nurse_account" readonly="readonly"type="text" class="form-control" th:value="${nurseedit.nurse_account}">
+    </div>
+  <div class="form-group">
+    <label >姓名</label>
+    <input name="nurse_password" type="text" class="form-control"  th:value="${nurseedit.nurse_password}">
+  </div>
+    <div class="form-group">
+      <label >姓名</label>
+      <input name="nurse_name" type="text" class="form-control"  th:value="${nurseedit.nurse_name}">
+    </div>
+    <div class="form-group">
+      <label >性别</label>
+      <input name="nurse_gender" type="text" class="form-control"  th:value="${nurseedit.nurse_gender}">
+    </div>
+    <div class="form-group">
+      <label >照片</label>
+      <input name="nurse_picture" type="text" class="form-control" th:value="${nurseedit.nurse_picture}">
+    </div>
+    <div class="form-group">
+      <label>邮箱</label>
+      <input  name="nurse_email" type="text" class="form-control"  th:value="${nurseedit.nurse_email}">
+    </div>
+    <div class="form-group">
+      <label>QQ</label>
+      <input  name="nurse_qq" type="text" class="form-control"th:value="${nurseedit.nurse_qq}">
+    </div>
+    <div class="form-group">
+      <label>电话</label>
+      <input  name="nurse_phone" type="text" class="form-control"th:value="${nurseedit.nurse_phone}">
+    </div>
+    <div class="form-group">
+      <label>等级</label>
+      <input  name="nurse_level"readonly="readonly" type="number" class="form-control"  th:value="${nurseedit.nurse_level}">
+    </div>
+    <div class="form-group">
+      <label >价格</label>
+      <input name="nurse_price" type="number" class="form-control" th:value="${nurseedit.nurse_price}">
+    </div>
+    <div class="form-group">
+      <label >入职时间</label>
+      <input name="nurse_time_entry" readonly="readonly" type="date" class="form-control"  th:value="${nurseedit.nurse_time_entry}">
+    </div>
+    <div class="form-group">
+      <label >个人简介</label>
+      <input name="nurse_intro" type="text" class="form-control"  th:value="${nurseedit.nurse_intro}">
+    </div>
+
+    <div class="form-group">
+      <label >状态</label>
+      <input name="nurse_state" type="text" class="form-control"placeholder="Connect"th:value="${nurseedit.nurse_state}">
+    </div>
+
+<div class="form-group">
+<div class="button-group">
+<div class="action-buttons">
+<div class="upload-button">
+<button class="btn btn-common">上传简历</button>
+<input id="cover_img_file_1" type="file">
+</div>
+</div>
+</div>
+</div>
+<div class="form-group"> </div>
+
+  <button type="submit" class="btn btn-primary">修改</button>
+
+  </form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<a href="#" class="back-to-top">
+<i class="lni-arrow-up"></i>
+</a>
+
+<div id="preloader">
+<div class="loader" id="loader-1"></div>
+</div>
+
+
+<script src="../assets/js/jquery-min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<!--<script src="../assets/js/color-switcher.js"></script>-->
+<script src="../assets/js/owl.carousel.min.js"></script>
+<script src="../assets/js/jquery.slicknav.js"></script>
+<script src="../assets/js/jquery.counterup.min.js"></script>
+<script src="../assets/js/waypoints.min.js"></script>
+<script src="../assets/js/form-validator.min.js"></script>
+<script src="../assets/js/contact-form-script.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

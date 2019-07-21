@@ -1,0 +1,810 @@
+﻿<!doctype html>
+
+<html class="no-js" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>成都新华亿母婴服务</title>
+    <meta name="robots" content="noindex, follow"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{../images/favicon.ico}">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{../index_css/bootstrap.min.css}">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" th:href="@{../index_css/fontawesome.min.css}">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" th:href="@{../index_css/plugins.css}">
+
+    <!-- Helper CSS -->
+    <link rel="stylesheet" th:href="@{../index_css/helper.css}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" th:href="@{../index_css/style.css}">
+
+    <!-- Modernizer JS -->
+    <script th:src="@{../js/vendor/modernizr-2.8.3.min.js}"></script>
+</head>
+
+<body>
+
+<div class="site-wrapper boxed-layout pt-0">
+
+    <!-- Header Section Start -->
+    <header class="header-section section position-static">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters align-items-center">
+                <div class="col-4 col-lg-2 col-xl-3">
+                    <!-- Logo Start -->
+                    <div class="header-logo header-logo-one mt-0">
+                        <a th:href="@{../User/index.html}">
+                            <img th:src="@{../images/logo.png}" alt="Olson">
+                        </a>
+                    </div><!-- Logo End -->
+                </div>
+
+                <div class="col col-lg-7 col-xl-6 d-none d-lg-block">
+                    <div class="main-menu mr-lg-100">
+                        <nav> </nav>
+                    </div>
+                </div>
+
+                <div class="col-8 col-lg-3 col-xl-3">
+                    <div class="header-shop-links">
+                        <div class="shop-links-item header-search">
+                            <a href="javascript:void(0)" class="btn-src"><img th:src="@{../images/icons/search.png}" alt="Search"></a>
+                            <a href="javascript:void(0)" class="btn-close"><img th:src="@{../images/icons/close.png}" alt="Close"></a>
+
+                            <div class="search-content-wrap">
+                                <form action="#" method="post">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" id="search" placeholder="Search here..." />
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="shop-links-item header-mini-cart">
+<div class="mini-cart-wrap mobile-small-right">
+                  <div class="mini-cart-product">
+                                    <a  th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-1.png}" alt=""></a>
+                                    <div class="content">
+                                        <h5 class="title"><a th:href="@{../User/single-product.html}">Injected humour</a></h5>
+                                        <span>$799.99</span>
+                                    </div>
+                                    <a href="#" class="remove"><i class="fa fa-trash"></i></a>
+                                </div>
+                                <div class="mini-cart-product" id = "product" onclick="toBuy()">
+                                    <a th:href="@{../User/single-product.html}" class="image">
+                                        <img th:src="@{../images/product/product-2.png}"  alt=""></a>
+                                    <div class="content">
+                                        <h5 class="title"><a th:href="@{../User/single-product.html}">Classical literature</a></h5>
+                                        <span>$799.99</span>
+                                    </div>
+                                    <a href="#" class="remove"><i class="fa fa-trash"></i></a>
+                                </div>
+
+                                <h4 class="total">Total <span>$1599.98</span></h4>
+
+                                <div class="buttons">
+                                    <a href="checkout.html">checkout</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="shop-links-item header-account mr-lg-0">
+                            <a  th:href="@{/customer/index}"><img th:src="@{../images/icons/user.png}" alt="Account"></a>
+                        </div>
+
+                        <div class="shop-links-item header-menu-icon d-lg-none"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <div class="side-menu-wrap">
+        <button class="side-menu-close"><span></span></button>
+        <div class="side-menu-inner">
+
+            <div class="side-logo"><a th:href="@{../User/index.html}"><img th:src="@{../images/logo.png}" alt=""></a></div>
+
+            <div class="side-menu nice-scroll">
+                <nav>
+                    <ul>
+                        <li class="menu-item-has-children"><a th:href="@{../User/index.html}">Home</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{../User/index.html}">Home One</a></li>
+                                <li><a href="index-2.html">Home Two</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="shop-left-sidebar.html">Shop</a>
+                            <ul class="sub-menu">
+                                <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                <li><a href="shop-full-width.html">Shop Full Width</a></li>
+                                <li><a th:href="@{../User/single-product.html}">Single Product</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="login-register.html">Login Register</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="blog-left-sidebar.html">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                <li><a href="blog-full-width.html">Blog Full Width</a></li>
+                                <li><a href="single-blog-left-sidebar.html">Single Blog Left Sidebar</a></li>
+                                <li><a href="single-blog-right-sidebar.html">Single Blog Right Sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="side-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+
+        </div>
+    </div>
+<!-- Slider Section Start -->
+    <div class="slider-section section">
+        <div class="slider-wrapper">
+            <div class="slider-slide" data-bg="images/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="slide-content">
+                                <div class="slide-content-inner">
+                                  <div>&nbsp;</div>
+                                  <div>&nbsp;</div>
+                                  <div>&nbsp;</div>
+                                  <div>&nbsp;</div>
+                                  <div>&nbsp;</div>
+                                  <h2>Soft &amp;Professional</h2>
+                                  <p>需要给宝宝最温柔，最专业的呵护</p>
+                                  <p>选择新华亿！ </p>
+                                  <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-slide" data-bg="images/hero/hero-2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="slide-content">
+                                <div class="slide-content-inner">
+                                  <h2>Best Environment </h2>
+                                  <p>给母亲和宝宝最好的</p>
+                                  <a th:href="@{../shop-full-width.html}">选择新华亿!</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-slide" data-bg="images/hero/hero-3.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="slide-content">
+                                <div class="slide-content-inner">
+                                    <h2>Fashionable & Stylish</h2>
+                                    <p>国际化育儿理念</p>
+                                  <p>最VOGUE的父母与宝宝 </p>
+                                    <a th:href="@{../shop-full-width.html}">选择新华亿正是好时机!</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider Section End -->
+
+    <!-- Banner Section Start -->
+    <div class="banner-section section mt-100 mb-80 mt-xs-70 mb-xs-50">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"><img th:src="@{../images/banner/banner-1.jpg}" alt="Banner"></a></div>
+                </div>
+
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"><img th:src="@{../images/banner/banner-2.jpg}" alt="Banner"></a></div>
+                </div>
+
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"><img th:src="@{../images/banner/banner-3.jpg}" alt="Banner"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Product Section Start -->
+    <div class="product-section section bg-gray pt-100 pb-70 pt-xs-70 pb-xs-40">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center col mb-80 mb-xs-50">
+                  <h1>顶级育婴管理团队</h1>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-3 col-md-6 col-12 mb-30" th:each="product:${products}">
+
+                    <div class="product-item bg-white" >
+                        <div class="product-inner" >
+
+                            <div class="image-wrap"  >
+                                <a  class="image"th:href="@{/single/}+${product.nurse_account}">
+                                    <img th:src=@{${product.nurse_picture}} alt=""></a>
+                                <a href="#" class="wishlist"></a>
+                                <div class="actions"> <a th:href="@{/single/}+${product.nurse_account}"><i class="fa fa-eye"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="content text-center">
+                              <h4 class="title" th:text="${product.nurse_name}"></h4>
+                              <div class="price" th:text="${product.nurse_price}"> </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-2.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title"><a th:href="@{../User/single-product.html}"> 高级育婴师 王美丽</a></h4>-->
+                              <!--<div class="price"><del class="price-old">¥10000/M </del> &nbsp; &nbsp; &nbsp;¥7999/M</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-3.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title"><a th:href="@{../User/single-product.html}">高级育婴师 李雪英</a></h4>-->
+                              <!--<div class="price"><del class="price-old">¥11000/M</del> ¥9500/M </div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-4.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title">育婴教育家 张兴</h4>-->
+                              <!--<div class="price"><del class="price-old">¥15000/M</del> ¥12000/M</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-5.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title">高级育婴师 何琴</h4>-->
+                              <!--<div class="price"><del class="price-old">¥9999/M</del> ¥8000/M</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-6.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title">高级育婴师 梅青</h4>-->
+                              <!--<div class="price"><del class="price-old">¥9500/M</del> ¥7500/M</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-7.png}" alt=""></a>-->
+                                <!---->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title">育婴教育家 李庆</h4>-->
+                              <!--<div class="price"><del class="price-old">¥15999/M</del> ¥12000/M</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="col-lg-3 col-md-6 col-12 mb-30">-->
+
+                    <!--<div class="product-item bg-white">-->
+                        <!--<div class="product-inner">-->
+
+                            <!--<div class="image-wrap">-->
+                                <!--<a th:href="@{../User/single-product.html}" class="image"><img-->
+                                        <!--th:src="@{../images/product/product-8.png}" alt=""></a>-->
+                                <!--<a href="#" class="wishlist"></a>-->
+                                <!--<div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>-->
+                                <!--</div>-->
+                          <!--</div>-->
+
+                            <!--<div class="content text-center">-->
+                              <!--<h4 class="title">育婴助理 李好</h4>-->
+                              <!--<div class="price"><del class="price-old">¥7000</del> ¥6000</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!-- Product Section End -->
+
+    <!-- Banner Section Start -->
+    <div class="banner-section section mt-100 mb-80 mt-xs-70 mb-xs-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"></div>
+                </div>
+
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"></a></div>
+                </div>
+
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"></a></div>
+                </div>
+
+                <div class="col-md-8 col-12 mb-20">
+                    <div class="banner"><a href="#"><img th:src="@{../images/banner/banner-7.jpg}" alt="Banner"></a></div>
+                </div>
+
+                <div class="col-md-4 col-12 mb-20">
+                    <div class="banner"><a href="#"><img th:src="@{../images/banner/banner-8.jpg}" alt="Banner"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Popular Product Section Start -->
+    <div class="product-section section mb-100 mb-xs-70">
+        <div class="container">
+
+            <div class="row">
+                <div class="section-title text-center col mb-50">
+                  <h1>季度最受好评服务</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="product-slider">
+                    <div class="slide-item col">
+
+                        <div class="product-item bg-gray">
+                            <div class="product-inner">
+
+                                <div class="image-wrap">
+                                    <a th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-1.png}" alt=""></a>
+                                    <a href="#" class="wishlist"></a>
+                                    <div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="content text-center">
+                                  <h4 class="title">莉莉安</h4>
+                                  <span class="price">¥11000/M</span></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-item col">
+
+                        <div class="product-item bg-gray">
+                            <div class="product-inner">
+
+                                <div class="image-wrap">
+                                    <a th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-2.png}" alt=""></a>
+                                    <a href="#" class="wishlist"></a>
+                                    <div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="content text-center">
+                                  <h4 class="title">王美丽</h4>
+                                  <span class="price">¥7999/M</span></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-item col">
+
+                        <div class="product-item bg-gray">
+                            <div class="product-inner">
+
+                                <div class="image-wrap">
+                                    <a th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-3.png}" alt=""></a>
+                                    <a href="#" class="wishlist"></a>
+                                    <div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="content text-center">
+                                  <h4 class="title">李雪英 </h4>
+                                  <span class="price">¥9500/M</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-item col">
+
+                        <div class="product-item bg-gray">
+                            <div class="product-inner">
+
+                                <div class="image-wrap">
+                                    <a th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-4.png}" alt=""></a>
+                                    <a href="#" class="wishlist"></a>
+                                    <div class="actions"> </div>
+                                </div>
+
+                                <div class="content text-center">
+
+                                    <h4 class="title"><a th:href="@{../User/single-product.html}">张兴</a></h4>
+                                    <span class="price">¥12000/M</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-item col">
+
+                        <div class="product-item bg-gray">
+                            <div class="product-inner">
+
+                                <div class="image-wrap">
+                                    <a th:href="@{../User/single-product.html}" class="image"><img
+                                            th:src="@{../images/product/product-5.png}" alt=""></a>
+                                    
+                                    <div class="actions"> <a href="#"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="content text-center">
+                                  <h4 class="title">何琴</h4>
+                                  <span class="price">¥8000</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Popular Product Section End -->
+
+    <!-- Call to action Section Start -->
+    <div class="call-to-action section mb-100 mb-xs-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="call-to-action-item mt-0">
+                        <div class="call-to-action-item__icon">
+                            <img th:src="@{../images/icons/fast-delivery.png}" alt="fast delivery">
+                        </div>
+                        <div class="call-to-action-item__info">
+                          <h3>7✖️24小时专人语音服务 </h3>
+                          <p>出现问题及时反馈，服务无忧</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="call-to-action-item">
+                        <div class="call-to-action-item__icon">
+                            <img th:src="@{../images/icons/quality.png}" alt="quality">
+                        </div>
+                        <div class="call-to-action-item__info">
+                          <h3>全球育婴资源</h3>
+                          <p>拥有全球的育婴资源提供全方位支持</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="call-to-action-item">
+                        <div class="call-to-action-item__icon">
+                            <img th:src="@{../images/icons/return.png}" alt="return">
+                        </div>
+                        <div class="call-to-action-item__info">
+                          <h3>标准化服务</h3>
+                          <p>专业培训，确保每一位育婴师有极高的专业水平</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call to action Section End -->
+
+    <!-- Subscribe Section Start -->
+    <div class="subscribe-section section bg-light-blue pt-55 pb-55">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 ml-auto mr-auto col-12">
+                    <div class="row align-items-center">
+
+                        <!-- Mailchimp Subscribe Content Start -->
+                        <div class="col-lg-6 col-12 mb-15 mt-15">
+                            <div class="subscribe-content">
+                              <h2>选择新华亿，给母婴最专业的呵护</h2>
+                              <h4>提前预订服务尽享优惠 <br>
+                                成都千万家庭的选择</h4>
+                            </div>
+                        </div><!-- Mailchimp Subscribe Content End -->
+
+
+                        <!-- Mailchimp Subscribe Form Start -->
+                        <div class="col-lg-6 col-12 mb-15 mt-15">
+
+                            <form id="mc-form" class="mc-form subscribe-form">
+<button id="mc-submit"> 开始专享服务定制</button>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->                                <!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+
+                        </div><!-- Mailchimp Subscribe Form End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe Section End -->
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section section">
+        <!-- Start Footer Widget Area -->
+        <div class="footer-widget-area pt-80 pb-30">
+            <div class="container">
+                <div class="footer-widget-content">
+                    <div class="row">
+                        <!-- Start Footer Widget Item -->
+                        <div class="col-md-12 col-lg-3">
+                            <div class="footer-widget-item-wrap">
+                                <div class="widget-body">
+                                    <div class="about-text pt-38 pt-sm-0 pt-md-0">
+                                        <a th:href="@{../User/index.html}"><img th:src="@{../images/logo.png}" alt="Logo"/></a>
+                                        <p>成都新华亿，专业的母婴呵护服务</p>
+                                        <p>地址：犀安路999号 </p>
+                                        <p class="d-none d-md-block d-lg-none">专注高端育婴服务</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Footer Widget Item -->
+
+                        <!-- Start Footer Widget Item -->
+                        <div class="col-sm-3 col-lg-2">
+                            <div class="footer-widget-item-wrap">
+                                <h3 class="widget-title">联系我们</h3>
+                                <div class="widget-body">
+                                    <ul class="footer-list">
+                                        <a href="#">(028) 6636 6254</a>
+										<a href="#">swjtu@163.com</a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Footer Widget Item -->
+
+                        <!-- Start Footer Widget Item -->                        <!-- End Footer Widget Item -->
+
+                        <!-- Start Footer Widget Item -->
+                        <div class="col-sm-3 col-lg-2">
+                            <div class="footer-widget-item-wrap">
+<div class="widget-body">
+                    <ul class="footer-list">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Footer Widget Item -->
+
+                        <!-- Start Footer Widget Item -->
+                        <div class="col-sm-3 col-lg-3"> </div>
+                        <!-- End Footer Widget Item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Widget Area -->
+
+        <!-- Start Footer Bottom Area -->
+        <div class="footer-bottom-wrapper pt-15 pb-15">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-lg-3 m-auto order-1">
+                        <div class="footer-social-icons nav justify-content-center justify-content-sm-start mb-xs-10">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-lg-6 m-auto order-3 order-sm-2 text-center text-sm-left text-lg-center">
+                        <div class="copyright-text mt-xs-10 ">
+                          <p>&copy; 2019 <a th:href="@{../User/index.html}">成都新华亿母婴</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3 m-auto order-2 text-center text-md-right">
+                        <img th:src="@{../images/payments.png}" alt="Payment Method"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom Area -->
+    </footer>
+    <!-- End Footer Section -->
+
+</div>
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script th:src="@{../js/vendor/jquery-1.12.4.min.js}"></script>
+<!-- Popper JS -->
+<script th:src="@{../js/popper.min.js}"></script>
+<!-- Bootstrap JS -->
+<script th:src="@{../js/bootstrap.min.js}"></script>
+<!-- Plugins JS -->
+<script th:src="@{../js/plugins.js}"></script>
+<!-- Ajax Mail -->
+<script th:src="@{../js/ajax-mail.js}"></script>
+<!-- Main JS -->
+<script th:src="@{../js/main.js}"></script>
+
+</body>
+
+</html>
